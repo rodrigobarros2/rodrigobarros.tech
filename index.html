@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodrigo Barros — Engenharia de software, IA e segurança de aplicações</title>
+<meta name="description" content="Engenheiro de software full stack. Backend e integrações, agentes de IA para atendimento e back-office, e segurança de aplicações (AppSec e pentest autorizado). Atendo empresas de todo o Brasil, remoto.">
+<meta property="og:title" content="Rodrigo Barros — construo, automatizo e protejo">
+<meta property="og:description" content="Backend e integrações, IA aplicada e segurança de aplicações para empresas brasileiras.">
+<meta property="og:url" content="https://rodrigobarros.tech/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://rodrigobarros.tech/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' text-anchor='middle' fill='white'%3ERB%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#fbfaf7;--card:#ffffff;--ink:#16181d;--muted:#5b616e;--line:#e6e3dc;--accent:#0f766e;--accent-ink:#ffffff;--soft:#e7f3f1}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#eceef2;--muted:#9aa1ae;--line:#272b35;--accent:#2dd4bf;--accent-ink:#06201d;--soft:#12302c}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-weight:700;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-size:15px}
+nav ul a:hover{color:var(--ink)}
+.hero{padding:72px 0 56px}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.025em;margin:0 0 18px;max-width:17ch}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:62ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px;max-width:65ch}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
+.card p{margin:0 0 12px;color:var(--muted)}
+.card ul{margin:0;padding-left:18px}
+.card li{margin:4px 0}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);background:var(--soft);padding:3px 9px;border-radius:999px;margin-bottom:12px}
+.num{font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.num small{font-size:16px;font-weight:600;color:var(--muted)}
+.proof p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:700;font-size:14px;margin-bottom:10px}
+.steps b{display:block;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:15px}
+.stack{display:flex;flex-wrap:wrap;gap:8px}
+.stack span{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 10px;font-size:14px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer a{color:var(--muted)}
+@media (max-width:860px){.g3,.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){nav ul{display:none}.g3,.g2,.steps{grid-template-columns:1fr}.hero{padding:48px 0 40px}.contact{padding:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#">Rodrigo Barros</a>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#como">Como trabalho</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="eyebrow">Engenharia de software · IA aplicada · Segurança</span>
+    <h1>Construo, automatizo e protejo o software da sua empresa.</h1>
+    <p class="lead">Sou engenheiro de software full stack com mais de 5 anos entregando produtos de ponta a ponta. Hoje sou responsável técnico de uma plataforma com IA usada por 112 escritórios, em que agentes conduzem cerca de 39 mil conversas por mês no WhatsApp. Atendo empresas de todo o Brasil, de forma remota, como PJ.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:rodrigo@rodrigobarros.tech?subject=Conversa%20sobre%20um%20projeto">Conversar sobre um projeto</a>
+      <a class="btn" href="https://www.linkedin.com/in/rodrigobarros3" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/rodrigobarros2" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <h2>O que eu faço</h2>
+      <p class="sub">Três frentes, sempre com código em produção, testes, monitoramento e documentação. Começo com um diagnóstico curto para entender o problema antes de propor qualquer coisa.</p>
+      <div class="grid g3">
+        <div class="card">
+          <span class="tag">Engenharia de software</span>
+          <h3>Backend, integrações e times</h3>
+          <p>Para quem precisa entregar mais rápido ou destravar um sistema que não escala.</p>
+          <ul>
+            <li>APIs e integrações (ERP, CRM, gateways de pagamento, marketplace, NF-e, WhatsApp)</li>
+            <li>Desempenho e estabilidade de sistemas em produção</li>
+            <li>Dev full stack sênior sob demanda, como PJ parcial</li>
+            <li>Manutenção e evolução mensal</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Inteligência artificial</span>
+          <h3>Agentes e automações</h3>
+          <p>IA que resolve um trabalho real, com custo medido e supervisão humana.</p>
+          <ul>
+            <li>Agente de atendimento e agendamento no WhatsApp e no site</li>
+            <li>Automação de back-office (documentos, cadastros, triagem)</li>
+            <li>Copiloto interno que responde com base nos documentos da empresa</li>
+            <li>Engenharia de IA sob demanda para startups</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Segurança de aplicações</span>
+          <h3>AppSec e pentest autorizado</h3>
+          <p>Segurança prática para quem constrói produto, sempre com autorização formal e por escrito.</p>
+          <ul>
+            <li>Revisão e proteção de apps feitos com IA (Lovable, Bolt, Supabase)</li>
+            <li>Pentest de aplicações web e APIs</li>
+            <li>Pipeline seguro (SAST, segredos, dependências)</li>
+            <li>Questionários de segurança e due diligence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados">
+    <div class="wrap">
+      <h2>Resultados em produção</h2>
+      <p class="sub">Números de projetos em que trabalhei diretamente.</p>
+      <div class="grid g3">
+        <div class="card proof"><div class="num">39 mil <small>conversas/mês</small></div><p>conduzidas por agentes de IA no WhatsApp, do primeiro contato ao contrato assinado, numa plataforma usada por 112 escritórios.</p></div>
+        <div class="card proof"><div class="num">600 → 155 <small>ms</small></div><p>de tempo de resposta (p50) numa API, com diagnóstico e ajuste no banco de dados.</p></div>
+        <div class="card proof"><div class="num">−31% <small>custo de IA</small></div><p>no gasto diário com modelos de linguagem, medindo o custo de cada chamada.</p></div>
+        <div class="card proof"><div class="num">15+ <small>integrações</small></div><p>em produção (WhatsApp Business, Stripe, Meta, PJe, Google Calendar, ZapSign, Clicksign, Docusign) com filas, retentativas e idempotência.</p></div>
+        <div class="card proof"><div class="num">0 <small>cobranças duplicadas</small></div><p>depois de migrar 11 tipos de consulta para processamento em background com idempotência.</p></div>
+        <div class="card proof"><div class="num">4 <small>micro-frontends</small></div><p>do Portal Empresas do Hospital Israelita Albert Einstein, como principal autor (cerca de 770 commits e 180 PRs).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Como trabalho</h2>
+      <p class="sub">Escopo claro, entregas curtas e você acompanhando tudo.</p>
+      <ol class="steps">
+        <li><b>Conversa</b><span>30 minutos para entender o problema e o contexto. Sem custo.</span></li>
+        <li><b>Diagnóstico</b><span>Levantamento curto, com plano, prazo e preço fechados.</span></li>
+        <li><b>Entrega</b><span>Ciclos semanais com código no seu repositório, testes e documentação.</span></li>
+        <li><b>Acompanhamento</b><span>Garantia após a entrega e, se fizer sentido, evolução mensal.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Tecnologias</h2>
+      <p class="sub">Trabalho principalmente com o ecossistema TypeScript, e me adapto à stack que a sua empresa já usa.</p>
+      <div class="stack">
+        <span>TypeScript</span><span>Node.js</span><span>NestJS</span><span>React</span><span>Next.js</span><span>React Native</span><span>PostgreSQL</span><span>MongoDB</span><span>Prisma</span><span>Filas e mensageria</span><span>Python</span><span>LLMs e agentes</span><span>RAG</span><span>WhatsApp Business API</span><span>Stripe</span><span>Docker</span><span>AWS</span><span>Semgrep</span><span>OWASP</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Vamos conversar?</h2>
+        <p class="sub">Conte em poucas linhas o que você precisa. Respondo em até 1 dia útil.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:rodrigo@rodrigobarros.tech?subject=Conversa%20sobre%20um%20projeto">rodrigo@rodrigobarros.tech</a>
+          <a class="btn" href="https://www.linkedin.com/in/rodrigobarros3" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Rodrigo Barros · CNPJ 62.096.009/0001-03 · Teresina/PI · atendimento remoto em todo o Brasil</span>
+    <a href="/privacidade">Aviso de privacidade</a>
+  </div>
+</footer>
+</body>
+</html>
