@@ -232,6 +232,23 @@ footer a{color:var(--muted)}
       </div>
 
       <div class="block">
+        <h3>Laboratório público: AppSec num SaaS na AWS</h3>
+        <p class="sub">Um serviço de pedidos e cupons para restaurantes (API Gateway, Lambda, SQS, DynamoDB, S3, KMS, Secrets Manager e WAF, tudo em Terraform), em versão vulnerável e corrigida. A esteira roda nas duas: a corrigida precisa passar, e a vulnerável precisa ser barrada. Assim fica provado que cada ferramenta pega a falha.</p>
+        <div class="tablewrap">
+          <table class="ba">
+            <thead><tr><th>Verificação</th><th>Versão vulnerável</th><th>Versão corrigida</th></tr></thead>
+            <tbody>
+              <tr><td>Testes de abuso (IDOR, token forjado, desconto do cliente, cupom resgatado duas vezes, webhook sem assinatura)</td><td class="bad">11 falhas provadas</td><td class="ok">Todas bloqueadas</td></tr>
+              <tr><td>SAST com regras da casa (Semgrep)</td><td class="bad">9 achados</td><td class="ok">0</td></tr>
+              <tr><td>Infraestrutura como código (Checkov)</td><td class="bad">77 reprovações: IAM *:*, S3 público, SSH aberto</td><td class="ok">0 reprovações, exceções justificadas</td></tr>
+              <tr><td>Segredos, dependências, container e DAST (gitleaks, osv-scanner, Trivy, Hadolint, OWASP ZAP)</td><td class="bad">Barrada em todas</td><td class="ok">Aprovada</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:14px 0 0;font-weight:600"><a href="https://github.com/rodrigobarros2/appsec-aws-lab" rel="noopener">Ver o laboratório no GitHub →</a></p>
+      </div>
+
+      <div class="block">
         <h3>Segurança no meu dia a dia de produto</h3>
         <p class="sub">O que eu aplico na plataforma com IA da qual sou responsável técnico, usada por 112 escritórios de advocacia.</p>
         <ul class="ev">
