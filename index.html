@@ -341,7 +341,7 @@ footer a{color:var(--muted)}
         <div class="card proof"><div class="num">−31% <small>custo de IA</small></div><p>no gasto diário com modelos de linguagem, medindo o custo de cada chamada.</p></div>
         <div class="card proof"><div class="num">15+ <small>integrações</small></div><p>em produção (WhatsApp Business, Stripe, Meta, PJe, Google Calendar, ZapSign, Clicksign, Docusign) com filas, retentativas e idempotência.</p></div>
         <div class="card proof"><div class="num">0 <small>cobranças duplicadas</small></div><p>depois de migrar 11 tipos de consulta para processamento em background com idempotência.</p></div>
-        <div class="card proof"><div class="num">4 <small>micro-frontends</small></div><p>do Portal Empresas do Hospital Israelita Albert Einstein, como principal autor (cerca de 770 commits e 180 PRs).</p></div>
+        <div class="card proof"><div class="num">770+ <small>commits</small></div><p>e 180 PRs no back-office do agendamento online do Hospital Israelita Albert Einstein, como principal autor de 4 micro-frontends.</p></div>
       </div>
     </div>
   </section>
@@ -383,26 +383,32 @@ footer a{color:var(--muted)}
         <div class="card">
           <span class="tag">Saúde</span>
           <h3>Hospital Israelita Albert Einstein</h3>
-          <p class="meta">Agendamento online e Portal Empresas</p>
-          <p>Trabalhei em toda a stack do sistema de agendamento online do hospital e fui o principal autor de 4 micro-frontends do Portal Empresas.</p>
+          <p class="meta">Agendamento online e Portal Empresas · desenvolvedor full stack</p>
+          <p>Trabalhei no back-office que alimenta o agendamento online do hospital: os catálogos de onde saem as unidades, os médicos, os produtos e as regras que o paciente vê ao marcar. Fui o principal autor de 4 dos micro-frontends e coautor de outros 2, com cerca de 770 commits e 180 PRs.</p>
           <ul>
-            <li>Agendamento online: banco de dados, back-end e front-end</li>
-            <li>Correções críticas de desempenho e segurança</li>
-            <li>Cerca de 770 commits e 180 PRs no Portal Empresas</li>
+            <li>Unidades: horários de funcionamento, setores de atendimento, tipos de unidade e filtro por CNES</li>
+            <li>Especialistas: especialidades, segmentos, contatos para agendamento e disponibilidade nas plataformas digitais</li>
+            <li>Produtos, serviços e pacotes: coberturas, canais e teleconsulta; regras de negócio com campos e comparações configuráveis</li>
+            <li>Mailing de médicos com vínculo de especialistas e exportação em CSV</li>
+            <li>Controle de acesso por permissão e segregação por especialidade</li>
+            <li>Testes E2E com Cypress, correções apontadas pelo Fortify e pipelines no Azure DevOps</li>
           </ul>
-          <div class="stack"><span>React</span><span>NestJS</span><span>PostgreSQL</span><span>Redis</span><span>OAuth</span><span>AWS</span></div>
+          <div class="stack"><span>React</span><span>TypeScript</span><span>single-spa</span><span>Redux-Saga</span><span>React Query</span><span>Cypress</span><span>Jest</span><span>NestJS</span><span>PostgreSQL</span><span>Redis</span><span>Azure DevOps</span></div>
         </div>
         <div class="card">
           <span class="tag">Antifraude</span>
           <h3>Autoinsp</h3>
-          <p class="meta">Plataforma antifraude para o setor automotivo</p>
-          <p>Integrei bureaus de dados e fontes de consulta à plataforma que ajuda empresas a evitar fraude na compra e no financiamento de veículos.</p>
+          <p class="meta">Plataforma antifraude para o setor automotivo · desenvolvedor full stack</p>
+          <p>Trabalhei no portal dos clientes B2B que contratam as consultas, no serviço de consultas em NestJS e no app de fluxo de aprovação dos analistas. Foram cerca de 280 commits e 170 PRs em 10 meses.</p>
           <ul>
-            <li>Integrações com bureaus de crédito e cadastro (Boa Vista, PH3A)</li>
-            <li>Consultas de gravame, débitos, sinistro e processos judiciais</li>
-            <li>Relatórios em PDF de veículos e empresas (CNPJ)</li>
+            <li>Integrações com bureaus e fontes de dados: Boa Vista (crédito e cadastro PF e PJ), PH3A, BigDataCorp, CheckTudo e CarBigData</li>
+            <li>Consultas de gravame, BIN, leilão, débitos e restrições (Sefaz e Detran), roubo e furto, recall e processos judiciais</li>
+            <li>11 tipos de consulta migrados para processamento em background (SQS e BullMQ), sem cobrança duplicada nas retentativas</li>
+            <li>Fallback entre provedores, timeouts e aviso ao cliente quando uma fonte está instável; correções de estabilidade na análise com IA</li>
+            <li>Relatórios em PDF de veículo, CPF e CNPJ numa arquitetura única, com alertas de gravame ativo, chassi remarcado e CPF irregular</li>
+            <li>Fluxo de aprovação com fila de demandas, distribuição automática entre analistas e permissões por papel</li>
           </ul>
-          <div class="stack"><span>TypeScript</span><span>Node.js</span><span>React</span><span>Monorepo</span></div>
+          <div class="stack"><span>Next.js</span><span>TypeScript</span><span>tRPC</span><span>Prisma</span><span>PostgreSQL</span><span>NestJS</span><span>MongoDB</span><span>BullMQ</span><span>Redis</span><span>AWS</span><span>Sentry</span></div>
         </div>
       </div>
     </div>
@@ -421,7 +427,7 @@ footer a{color:var(--muted)}
         <li>
           <span class="when">2025 – 2026</span>
           <h3>Desenvolvedor full stack <small>· Autoinsp</small></h3>
-          <p>Plataforma antifraude automotiva: integrações com bureaus de dados, consultas veiculares e relatórios.</p>
+          <p>Plataforma antifraude automotiva: integrações com bureaus de dados, consultas veiculares em background com fallback entre provedores, relatórios em PDF e fluxo de aprovação.</p>
         </li>
         <li>
           <span class="when">2024 – 2025</span>
@@ -431,7 +437,7 @@ footer a{color:var(--muted)}
         <li>
           <span class="when">2021 – 2023</span>
           <h3>Desenvolvedor full stack <small>· Hospital Israelita Albert Einstein</small></h3>
-          <p>Agendamento online e Portal Empresas, com foco em desempenho e segurança.</p>
+          <p>Micro-frontends do back-office do agendamento online (unidades, especialistas, produtos, serviços, regras e mailing), com controle de acesso por permissão, testes E2E e correções de segurança.</p>
         </li>
         <li>
           <span class="when">2021</span>
