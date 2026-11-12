@@ -161,6 +161,8 @@ h1{font-size:clamp(34px,3.9vw,56px);margin-bottom:18px}
           <li><b>Latência resolvida na causa</b>Diagnostiquei os gargalos no Atlas, criei os índices que faltavam e migrei o banco para a região da API: latência até o banco de 117 ms para 7,5 ms, e p50 da API de 600 ms para 155 ms.</li>
           <li><b>Cinco provedores, uma interface</b>Desenhei a camada de assinatura eletrônica (ZapSign, Clicksign, Docusign, Autentique e TramitaSign) atrás de um mesmo contrato, acionada pela própria IA para enviar o documento.</li>
           <li><b>Esteira de engenharia com agentes</b>A demanda vira especificação verificável e testes, é implementada em worktree isolada e passa por aceite independente, revisão de código e aprovação humana.</li>
+          <li><b>Observabilidade desde a base</b>Instrumentei a API com OpenTelemetry: tracing distribuído com amostragem, métricas de filas e de canais, e logs centralizados, com os dados pessoais removidos dos spans antes de sair do processo.</li>
+          <li><b>Monetização como produto</b>Construí a cobrança por créditos com Stripe (planos, carteira, limites, upgrade e chargeback) e um painel de consumo e margem por recurso de IA.</li>
         </ul>
         <details class="more-d"><summary>detalhes técnicos</summary>
         <ul class="pts">
@@ -197,6 +199,12 @@ h1{font-size:clamp(34px,3.9vw,56px);margin-bottom:18px}
           <ul class="stats"><li><b>800+</b> usuários ativos</li><li><b>11</b> consultas migradas para background</li><li><b>7</b> produtos de dados integrados</li></ul>
           <p class="tech">Next.js · TypeScript · tRPC · Prisma · PostgreSQL · NestJS · MongoDB · BullMQ · Redis · AWS · Sentry</p>
         </div>
+        <ul class="dec">
+          <li><b>De síncrono para assíncrono</b>Migrei 11 tipos de consulta externa para jobs em background, primeiro em SQS FIFO e depois em BullMQ, com o cliente acompanhando o status.</li>
+          <li><b>Idempotência por jobId</b>As retentativas cobravam o cliente em dobro. A chave de idempotência por job eliminou a cobrança duplicada.</li>
+          <li><b>Resiliência por provedor</b>Fallback entre provedores de dados, circuit breaker e falha isolada por provedor, com aviso ao cliente quando uma fonte está instável.</li>
+          <li><b>Uma arquitetura para todos os relatórios</b>Unifiquei os relatórios PDF de veículo, CPF e CNPJ numa só arquitetura; sou autor de cerca de 85% do módulo de consultas.</li>
+        </ul>
         <details class="more-d"><summary>detalhes técnicos</summary>
         <ul class="pts">
           <li>Integrações com bureaus e fontes de dados: Boa Vista (crédito e cadastro PF e PJ), PH3A, BigDataCorp, CheckTudo e CarBigData</li>
@@ -344,15 +352,15 @@ h1{font-size:clamp(34px,3.9vw,56px);margin-bottom:18px}
     <header><span class="n">05</span> <b>./stack</b>o que uso no dia a dia</header>
     <div>
       <dl class="stack">
-        <div><dt>linguagens</dt><dd><span>TypeScript</span><span>Node.js</span><span>Python</span><span>SQL</span></dd></div>
-        <div><dt>backend</dt><dd><span>NestJS</span><span>tRPC</span><span>GraphQL</span><span>WebSocket (Socket.IO)</span><span>OpenAPI / Swagger</span><span>Prisma</span><span>Filas e mensageria</span><span>BullMQ</span><span>Idempotência e retentativas</span><span>Multi-tenant com RLS</span></dd></div>
+        <div><dt>linguagens</dt><dd><span>TypeScript</span><span>Node.js</span><span>Python</span><span>Go</span><span>SQL</span></dd></div>
+        <div><dt>backend</dt><dd><span>NestJS</span><span>tRPC</span><span>GraphQL</span><span>WebSocket (Socket.IO)</span><span>OpenAPI / Swagger</span><span>Prisma</span><span>Filas e mensageria</span><span>RabbitMQ</span><span>BullMQ</span><span>Idempotência e retentativas</span><span>CQRS e DDD</span><span>Circuit breaker</span><span>Fallback entre provedores</span><span>Multi-tenant com RLS</span></dd></div>
         <div><dt>front e mobile</dt><dd><span>React</span><span>Next.js</span><span>React Native</span><span>single-spa (micro-frontends)</span><span>React Query</span><span>Tailwind CSS</span><span>Zustand</span><span>Extensão do Chrome</span><span>Android</span></dd></div>
         <div><dt>dados</dt><dd><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Supabase</span><span>DynamoDB</span></dd></div>
         <div><dt>ia</dt><dd><span>LLMs e agentes</span><span>Claude API</span><span>Vercel AI SDK</span><span>OpenAI API</span><span>Gemini API</span><span>RAG</span><span>MCP</span><span>Guardrails</span><span>Custo por chamada</span><span>Evals de agentes</span><span>Observabilidade de LLM</span><span>Langfuse</span><span>Busca vetorial</span><span>Claude Code</span></dd></div>
         <div><dt>integrações</dt><dd><span>WhatsApp Business API</span><span>Evolution API</span><span>Z-API</span><span>Meta</span><span>Stripe</span><span>Asaas</span><span>Mercado Pago</span></dd></div>
         <div><dt>nuvem</dt><dd><span>AWS</span><span>SQS</span><span>Lambda</span><span>ECS</span><span>S3</span><span>Vercel</span></dd></div>
         <div><dt>entrega</dt><dd><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>GitHub Actions</span><span>Azure DevOps</span></dd></div>
-        <div><dt>testes e qualidade</dt><dd><span>Jest</span><span>Vitest</span><span>Cypress (E2E)</span><span>Sentry</span><span>OpenTelemetry</span><span>Grafana</span><span>Datadog</span></dd></div>
+        <div><dt>testes e qualidade</dt><dd><span>Jest</span><span>Vitest</span><span>Cypress (E2E)</span><span>Sentry</span><span>OpenTelemetry</span><span>Grafana</span><span>Datadog</span><span>Loki</span><span>Tracing distribuído</span></dd></div>
         <div><dt>segurança</dt><dd><span>OWASP WSTG</span><span>OWASP ASVS</span><span>OWASP API Security Top 10</span><span>Burp Suite</span><span>OWASP ZAP</span><span>nuclei</span><span>Semgrep</span><span>gitleaks</span><span>osv-scanner</span><span>Trivy</span><span>Checkov</span><span>Fortify</span><span>LGPD</span><span>OWASP Top 10 para LLMs</span></dd></div>
       </dl>
     </div>
