@@ -103,15 +103,39 @@ h2{font:400 clamp(28px,3.4vw,44px)/1.08 var(--serif);letter-spacing:-.025em;marg
 /* segurança: antes/depois em formato de diff */
 h3.sub{font:400 clamp(22px,2.2vw,28px)/1.15 var(--serif);letter-spacing:-.02em;margin:44px 0 8px}
 h3.sub+p{color:var(--muted);max-width:68ch;margin:0 0 18px}
-.diff{margin:0;border:1px solid var(--line);font:400 14px/1.55 var(--mono);overflow:hidden}
-.diff .f{padding:9px 14px;border-top:1px solid var(--line);font-weight:500}
-.diff .f:first-child{border-top:0}
-.diff .r{display:grid;grid-template-columns:28px 1fr;padding:5px 14px 5px 0}
+/* terminal: painéis escuros nos dois temas */
+.term{margin:0;background:#0c0e11;color:#c9d1d9;border:1px solid #262a31;font:400 13.5px/1.65 var(--mono);box-shadow:6px 6px 0 var(--line)}
+.term .bar{display:flex;justify-content:space-between;gap:16px;padding:8px 14px;border-bottom:1px solid #262a31;color:#7d8590;font-size:12.5px}
+.term .bar b{font-weight:500;color:#9aa3ad}
+.term .body{padding:14px 16px}
+.term .ln{margin:0}
+.term .ln+.ln{margin-top:14px}
+.term .ps{color:#7ee787;font-weight:500}
+.term .cmd{color:#f0f3f6}
+.term .cm{color:#6e7681}
+.term .out{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:2px 22px;color:#e3b341}
+.term .chk{margin:0;padding:0;list-style:none}
+.term .chk li{display:grid;grid-template-columns:44px minmax(0,1fr);padding:7px 0;border-top:1px dashed #262a31}
+.term .chk li:first-child{border-top:0}
+.term .chk i{font-style:normal;color:#7ee787}
+.term .chk b{font-weight:500;color:#f0f3f6}
+.term .chk span{display:block;color:#8b949e}
+.term .cur{display:inline-block;width:.6em;height:1.1em;vertical-align:-.2em;background:#7ee787;animation:blink 1.1s steps(1) infinite}
+.diff .f{padding:8px 16px;border-top:1px solid #262a31;color:#f0f3f6}
+.diff .f:first-of-type{border-top:0}
+.diff .r{display:grid;grid-template-columns:30px 1fr;padding:4px 16px 4px 0}
 .diff .r::before{text-align:center;font-weight:500}
-.diff .d{background:var(--delbg);color:var(--del)}
+.diff .d{background:rgba(248,81,73,.13);color:#ff9b93}
 .diff .d::before{content:"−"}
-.diff .a{background:var(--addbg);color:var(--add)}
+.diff .a{background:rgba(63,185,80,.13);color:#7ee787}
 .diff .a::before{content:"+"}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:40px 0 0;color:var(--muted);max-width:72ch;font-size:15.5px}
+.note b{color:var(--ink)}
+.prompt{font:400 14px var(--mono);color:var(--muted);margin:0 0 22px}
+.prompt .ps{color:var(--add);font-weight:500}
+.prompt .cmd{color:var(--ink)}
+h1::after{content:"";display:inline-block;width:.42em;height:.74em;margin-left:.12em;background:var(--accent);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 .more{font:400 15px var(--mono);margin:16px 0 0}
 .ev{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:48px;font-size:15.5px;color:var(--muted)}
 .ev li{padding:14px 0;border-top:1px solid var(--line)}
@@ -158,7 +182,8 @@ body{font-size:16px}
 .log li,.stack div{grid-template-columns:1fr;gap:2px}
 .diff{font-size:13px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (max-width:560px){.term{font-size:12.5px;box-shadow:none}.term .chk li{grid-template-columns:36px minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1::after,.term .cur{animation:none}}
 </style>
 </head>
 <body>
@@ -179,6 +204,7 @@ body{font-size:16px}
 <main id="conteudo" class="wrap">
   <div class="open">
     <div>
+      <p class="prompt" aria-hidden="true"><span class="ps">rodrigo@teresina:~$</span> <span class="cmd">whoami</span></p>
       <h1>Construo, automatizo e <em>protejo</em> software que roda em produção.</h1>
       <p class="lead">Sou Rodrigo Barros, engenheiro de software full stack, com mais de 5 anos entregando produtos de ponta a ponta. Hoje sou responsável técnico de uma plataforma com IA usada por 112 escritórios, em que agentes conduzem cerca de 39 mil conversas por mês no WhatsApp.</p>
       <ul class="contact">
@@ -194,7 +220,7 @@ body{font-size:16px}
   </div>
 
   <section class="sec" id="resultados">
-    <header><span class="n">01</span> <b>Resultados</b>em produção</header>
+    <header><span class="n">01</span> <b>./resultados</b>em produção</header>
     <div>
       <h2>Números de sistemas em que trabalhei diretamente.</h2>
       <dl class="ledger">
@@ -209,7 +235,7 @@ body{font-size:16px}
   </section>
 
   <section class="sec" id="trabalhos">
-    <header><span class="n">02</span> <b>Trabalhos</b>produtos e sistemas</header>
+    <header><span class="n">02</span> <b>./trabalhos</b>produtos e sistemas</header>
     <div>
       <article class="case">
         <div class="head"><h3>CardápioSimples</h3><span class="role">produto próprio · construído sozinho</span><span class="live">no ar</span></div>
@@ -280,14 +306,40 @@ body{font-size:16px}
   </section>
 
   <section class="sec" id="seguranca">
-    <header><span class="n">03</span> <b>Segurança</b>de aplicações</header>
+    <header><span class="n">03</span> <b>./seguranca</b>de aplicações</header>
     <div>
       <h2>Segurança feita por quem também constrói o produto.</h2>
-      <p class="intro">Encontro a falha, provo o risco sem tocar em dados reais, corrijo no código e testo de novo. Todo teste ativo só acontece com autorização por escrito do dono do sistema. Sou formado em Ciência da Computação com TCC em segurança da informação.</p>
+      <p class="intro">Eu não entrego só uma lista de problemas. Encontro a falha, provo o risco sem tocar em dados reais, corrijo no código e testo de novo. Como eu também escrevo e opero sistemas em produção, a correção não quebra o app.</p>
+      <ul class="ev">
+        <li><b>Só com autorização por escrito</b>Nenhum teste ativo começa sem termo assinado, escopo definido e regras de engajamento. Antes disso, olho só o que qualquer visitante vê.</li>
+        <li><b>Prova sem expor dados</b>Mostro o risco pela contagem e pela estrutura ("24 registros visíveis sem login"), nunca pelo conteúdo. Nada de dado pessoal sai do ambiente.</li>
+        <li><b>Eu corrijo, não só aponto</b>As correções vão para o repositório, com reteste e um relatório de antes e depois que o dono do negócio entende.</li>
+        <li><b>Formação</b>Ciência da Computação, com TCC em segurança da informação.</li>
+      </ul>
 
-      <h3 class="sub" style="margin-top:0">Laboratório público: AppSec num SaaS na AWS</h3>
-      <p>Um serviço de pedidos e cupons para restaurantes (API Gateway, Lambda, SQS, DynamoDB, S3, KMS, Secrets Manager e WAF, tudo em Terraform), em versão vulnerável e corrigida. A esteira roda nas duas: a corrigida precisa passar, e a vulnerável precisa ser barrada.</p>
-      <div class="diff" role="group" aria-label="Versão vulnerável comparada com a corrigida">
+      <h3 class="sub">O que eu verifico</h3>
+      <p>Um checklist com mais de 50 itens, baseado no OWASP (WSTG, ASVS e API Security Top 10), mais testes manuais do que scanner nenhum pega.</p>
+      <div class="term">
+        <div class="bar"><b>checklist.md</b><span>owasp · wstg · asvs · api top 10</span></div>
+        <div class="body">
+          <p class="ln"><span class="ps">$</span> <span class="cmd">./auditar --checklist</span></p>
+          <ul class="chk">
+            <li><i>[01]</i><div><b>Banco e controle de acesso</b><span>RLS do Supabase/Postgres, policies sempre verdadeiras, UPDATE sem checagem, views e funções que furam as regras.</span></div></li>
+            <li><i>[02]</i><div><b>IDOR e multi-tenant</b><span>Duas contas de teste: o usuário B consegue ler ou alterar os dados do A? Uma empresa enxerga a outra?</span></div></li>
+            <li><i>[03]</i><div><b>Segredos</b><span>Chaves no JavaScript público, source maps expostos, segredos no histórico do Git e rotação do que vazou.</span></div></li>
+            <li><i>[04]</i><div><b>Autenticação</b><span>Admin definido pelo próprio usuário, rotas protegidas só no front, sessão, recuperação de senha e enumeração de e-mails.</span></div></li>
+            <li><i>[05]</i><div><b>Pagamentos e webhooks</b><span>Preço calculado no cliente, status "pago" alterável, webhook sem assinatura, sem reconsulta ou sem idempotência.</span></div></li>
+            <li><i>[06]</i><div><b>APIs e integrações</b><span>Rotas abertas sem login, SSRF em URLs informadas pelo usuário, CORS, limite de requisições em login, OTP e chamadas que geram custo.</span></div></li>
+            <li><i>[07]</i><div><b>Recursos de IA</b><span>Prompt injection, vazamento das regras internas e de dados, e ações da IA executadas sem checagem no servidor.</span></div></li>
+            <li><i>[08]</i><div><b>LGPD e ECA Digital</b><span>Inventário de dados pessoais, minimização, exclusão de conta, canal do titular, dados sensíveis e app acessível a menores.</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub">Laboratório público: AppSec num SaaS na AWS</h3>
+      <p>Um serviço de pedidos e cupons para restaurantes (API Gateway, Lambda, SQS, DynamoDB, S3, KMS, Secrets Manager e WAF, tudo em Terraform), em versão vulnerável e corrigida. A esteira roda nas duas: a corrigida precisa passar, e a vulnerável precisa ser barrada. Assim fica provado que cada ferramenta pega a falha.</p>
+      <div class="term diff" role="group" aria-label="Versão vulnerável comparada com a corrigida">
+        <div class="bar"><b>appsec-aws-lab</b><span>diff vulneravel/ corrigida/</span></div>
         <div class="f">Testes de abuso (IDOR, token forjado, desconto do cliente, cupom resgatado duas vezes, webhook sem assinatura)</div>
         <div class="r d">11 falhas provadas</div>
         <div class="r a">Todas bloqueadas</div>
@@ -305,7 +357,8 @@ body{font-size:16px}
 
       <h3 class="sub">Auditoria de demonstração: app de clínica</h3>
       <p>Um app de clínica vulnerável de propósito, com dados 100% fictícios, auditado e corrigido de ponta a ponta. Foram 10 achados (7 críticos e 3 altos) e todos foram corrigidos.</p>
-      <div class="diff" role="group" aria-label="Antes e depois de cada achado">
+      <div class="term diff" role="group" aria-label="Antes e depois de cada achado">
+        <div class="bar"><b>relatorio-clinica.md</b><span>diff antes/ depois/ · 10 achados</span></div>
         <div class="f">Tabela de pacientes sem RLS</div>
         <div class="r d">24 pacientes com CPF e anotações clínicas visíveis sem login</div>
         <div class="r a">0 visíveis</div>
@@ -335,11 +388,36 @@ body{font-size:16px}
         <li><b>Guardrails de IA</b>que bloqueiam o vazamento das regras internas do agente e de dados da equipe para o lead.</li>
         <li><b>Proteção contra log forging</b>e mensagens de erro que não revelam detalhes internos.</li>
       </ul>
+
+      <h3 class="sub">Ferramentas que eu uso</h3>
+      <p>Meu ambiente roda no Kali Linux, empacotado numa imagem Docker com as versões fixadas, para que cada auditoria seja reproduzível. Os testes ativos só rodam com autorização. Os scripts do kit se recusam a rodar sem a trava de autorização.</p>
+      <div class="term">
+        <div class="bar"><b>rodrigo@kali: ~/kit</b><span>docker · versões fixadas</span></div>
+        <div class="body">
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls proxy/</span> <span class="cm"># interceptação e teste das regras de acesso, IDOR e lógica de pagamento</span>
+            <ul class="out"><li>Burp Suite</li><li>OWASP ZAP</li><li>jwt_tool</li><li>Corsy</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls varredura/</span> <span class="cm"># templates de CVE e de configuração incorreta, injeção, XSS, CMS e parâmetros escondidos</span>
+            <ul class="out"><li>nuclei</li><li>nikto</li><li>sqlmap</li><li>dalfox</li><li>wpscan</li><li>ffuf</li><li>arjun</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls recon/</span> <span class="cm"># o que está exposto na internet: subdomínios, tecnologias, WAF, rotas e URLs antigas</span>
+            <ul class="out"><li>subfinder</li><li>amass</li><li>dnsrecon</li><li>theHarvester</li><li>crt.sh</li><li>whois</li><li>dig</li><li>whatweb</li><li>wafw00f</li><li>katana</li><li>gau</li><li>gf</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls tls-rede/</span> <span class="cm"># certificados, protocolos e cifras, cabeçalhos de segurança e serviços expostos</span>
+            <ul class="out"><li>sslscan</li><li>sslyze</li><li>nmap</li><li>curl</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls codigo/</span> <span class="cm"># análise estática, segredos no histórico do Git e bibliotecas com vulnerabilidade conhecida</span>
+            <ul class="out"><li>Semgrep</li><li>gitleaks</li><li>osv-scanner</li><li>npm audit</li><li>retire.js</li><li>Dependabot</li><li>Fortify</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">ls kit-proprio/</span> <span class="cm"># scripts que eu escrevi para o que os scanners não pegam, com testes de regressão contra falso positivo</span>
+            <ul class="out"><li>RLS do Supabase</li><li>auditoria do Supabase</li><li>IDOR com 2 contas</li><li>rotas de API</li><li>rate limit</li><li>webhook de pagamento</li><li>regras do Firebase</li><li>source maps</li><li>serviços expostos</li><li>varredura do bundle JS</li><li>Guarda com diff</li></ul></div>
+          <div class="ln"><span class="ps">$</span> <span class="cmd">cat base.txt</span>
+            <ul class="out"><li>Kali Linux</li><li>Docker</li><li>Supabase CLI</li><li>Postgres</li><li>Node.js</li><li>Python</li><li>Go</li><li>jq</li><li>OWASP WSTG</li><li>OWASP ASVS</li><li>OWASP API Security Top 10</li><li>LGPD</li><li>ECA Digital</li></ul></div>
+          <p class="ln"><span class="ps">$</span> <span class="cur"></span></p>
+        </div>
+      </div>
+
+      <p class="note"><b>Segurança dentro da lei.</b> Testar um sistema sem autorização é crime no Brasil (Lei 12.737/2012, art. 154-A do Código Penal). Por isso todo teste ativo depende de autorização por escrito do dono do sistema, e os acessos de teste são revogados ao final.</p>
     </div>
   </section>
 
   <section class="sec" id="trajetoria">
-    <header><span class="n">04</span> <b>Trajetória</b>2016 – hoje</header>
+    <header><span class="n">04</span> <b>./trajetoria</b>2016 – hoje</header>
     <div>
       <ol class="log">
         <li><time>2026 – atual</time><div><h3>Responsável técnico <span>· Lexfy (4Juris)</span></h3><p>Plataforma de atendimento com IA para escritórios de advocacia. Arquitetura, API, painel web, integrações, custo de IA e segurança.</p></div></li>
@@ -353,7 +431,7 @@ body{font-size:16px}
   </section>
 
   <section class="sec" id="stack">
-    <header><span class="n">05</span> <b>Stack</b>o que uso no dia a dia</header>
+    <header><span class="n">05</span> <b>./stack</b>o que uso no dia a dia</header>
     <div>
       <dl class="stack">
         <div><dt>linguagens</dt><dd>TypeScript · Node.js · Python</dd></div>
@@ -363,7 +441,7 @@ body{font-size:16px}
         <div><dt>ia</dt><dd>LLMs e agentes · RAG · MCP</dd></div>
         <div><dt>nuvem e entrega</dt><dd>AWS (SQS, Lambda, ECS, S3) · Terraform · Docker · GitHub Actions · Vercel</dd></div>
         <div><dt>qualidade</dt><dd>Jest e Vitest · Sentry</dd></div>
-        <div><dt>segurança</dt><dd>Semgrep · OWASP</dd></div>
+        <div><dt>segurança</dt><dd>Semgrep · OWASP · Burp Suite · OWASP ZAP · nuclei · gitleaks · Kali Linux</dd></div>
       </dl>
     </div>
   </section>
