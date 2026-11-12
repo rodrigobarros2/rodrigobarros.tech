@@ -464,6 +464,47 @@ summary::-webkit-details-marker{display:none}
 .fold>summary:hover h3.sub{color:var(--accent)}
 .fold[open]{padding-bottom:30px}
 @media (max-width:980px){.sec{padding:60px 0}}
+
+/* ===== auditoria 2: decisões, hierarquia na stack e celular ===== */
+.dec{margin:6px 0 4px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:none}
+.dec li{padding:16px 18px;border:1px solid var(--line);border-left:2px solid var(--accent);background:rgba(59,158,255,.04);font-size:14.5px;line-height:1.55;color:#b9c7c0}
+.dec b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px;font-size:15px}
+.stack dd span.k{border-color:rgba(59,158,255,.6);color:var(--ink);background:rgba(59,158,255,.1);font-weight:500}
+.stack dd span:not(.k){color:var(--muted)}
+footer .wrap{justify-content:center}
+@media (max-width:980px){
+.dec{grid-template-columns:1fr}
+.top{height:auto;flex-wrap:wrap;gap:6px 16px;padding:12px 0 8px}
+.top ul{width:100%;overflow-x:auto;gap:20px;padding-bottom:4px;scrollbar-width:none}
+.top ul::-webkit-scrollbar{display:none}
+.top ul li:not(:last-child){display:block}
+.top ul a{white-space:nowrap}
+.top .pill{display:none}
+.shot{order:-1;justify-self:start;width:132px;margin:0 0 6px}
+.shot::after{display:none}
+.shot::before{filter:blur(18px)}
+.shot img{-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.sec{scroll-margin-top:96px}
+}
+@media (max-width:560px){
+.ledger{grid-template-columns:1fr 1fr}
+.ledger div,.ledger div:nth-child(n){padding:20px 14px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ledger div:nth-child(2n){border-right:0}
+.ledger div:nth-last-child(-n+2){border-bottom:0}
+.ledger div::before{left:14px}
+.ledger dt{font-size:25px}
+.ledger dt small{font-size:11px;margin-top:10px}
+.ledger dd{font-size:13.5px;line-height:1.5}
+h1{font-size:34px}
+.log p{display:none}
+.log li{padding:12px 0}
+.stack div{padding:10px 0}
+.stack dd{gap:6px}
+.stack dd span{font-size:12px;padding:3px 8px}
+.dec li{padding:13px 14px;font-size:13.5px}
+.sec{padding:48px 0}
+.case{padding:24px 18px}
+}
 </style>
 </head>
 <body>
@@ -656,7 +697,7 @@ summary::-webkit-details-marker{display:none}
         <div class="head"><h3>CardápioSimples</h3><span class="role">produto próprio · construído e operado sozinho</span><span class="live">no ar</span></div>
         <div>
           <p>SaaS de cardápio digital e delivery para restaurantes pequenos. O cliente pede pela vitrine da loja, o pedido cai no painel do lojista, imprime sozinho na cozinha e o cliente é avisado pelo WhatsApp. Do banco ao app do tablet.</p>
-          <ul class="stats"><li><b>2</b> lojas ativas</li><li><b>pedidos reais</b> em produção</li></ul>
+          <ul class="stats"><li><b>em produção</b> com lojas ativas</li><li><b>solo</b>: produto, código e operação</li></ul>
           <p class="tech">Next.js · TypeScript · Supabase · Claude API · Sentry · Vercel</p>
           <p class="more"><a href="https://cardapiosimples.com" rel="noopener">cardapiosimples.com</a></p>
         </div>
@@ -675,15 +716,19 @@ summary::-webkit-details-marker{display:none}
         <div class="head"><h3>Lexfy (4Juris)</h3><span class="role">responsável técnico · abr/2026 – atual</span></div>
         <div>
           <p>Plataforma de atendimento com IA para escritórios de advocacia. Agentes conduzem o atendimento no WhatsApp, do primeiro contato ao contrato assinado, para 112 escritórios.</p>
-          <ul class="stats"><li><b>39 mil</b> conversas/mês</li><li><b>15+</b> integrações</li><li><b>−31%</b> custo de IA</li></ul>
+          <ul class="stats"><li><b>RAG</b> com rerank</li><li><b>servidor MCP</b> com OAuth</li><li><b>A/B</b> de prompts com avaliador cego</li></ul>
           <p class="tech">NestJS · MongoDB · Redis · React 19 · LLMs</p>
         </div>
+                <ul class="dec">
+          <li><b>Custo de IA medido, não estimado</b>Criei um ledger de custo por chamada e por modelo, validado contra a fatura do provedor. Ele mostrou que o raciocínio interno do modelo consumia 41% do custo; cortando onde não era necessário, o gasto diário caiu 31%.</li>
+          <li><b>Latência resolvida na causa</b>Diagnostiquei os gargalos no Atlas, criei os índices que faltavam e migrei o banco para a região da API: latência até o banco de 117 ms para 7,5 ms, e p50 da API de 600 ms para 155 ms.</li>
+          <li><b>Cinco provedores, uma interface</b>Desenhei a camada de assinatura eletrônica (ZapSign, Clicksign, Docusign, Autentique e TramitaSign) atrás de um mesmo contrato, acionada pela própria IA para enviar o documento.</li>
+          <li><b>Esteira de engenharia com agentes</b>A demanda vira especificação verificável e testes, é implementada em worktree isolada e passa por aceite independente, revisão de código e aprovação humana.</li>
+        </ul>
         <details class="more-d"><summary>detalhes técnicos</summary>
         <ul class="pts">
-          <li>Cerca de 39 mil conversas por mês conduzidas por agentes</li>
           <li>Mais de 15 integrações: WhatsApp Business, Meta, PJe, Google Calendar, ZapSign, Clicksign, Docusign</li>
           <li>Cobrança por créditos com Stripe e painel de margem por recurso de IA</li>
-          <li>Custo diário de IA 31% menor, medindo o custo de cada chamada</li>
           <li>Maior contribuidor da API e do painel web</li>
         </ul>
         </details>
@@ -836,10 +881,10 @@ summary::-webkit-details-marker{display:none}
           <p class="ln"><span class="ps">$</span> <span class="cur"></span></p>
         </div>
       </div>
+          <p class="note" style="margin-top:24px"><b>Segurança dentro da lei.</b> Testar um sistema sem autorização é crime no Brasil (Lei 12.737/2012, art. 154-A do Código Penal). Por isso todo teste ativo depende de autorização por escrito do dono do sistema, e os acessos de teste são revogados ao final.</p>
         </details>
       </div>
 
-      <p class="note"><b>Segurança dentro da lei.</b> Testar um sistema sem autorização é crime no Brasil (Lei 12.737/2012, art. 154-A do Código Penal). Por isso todo teste ativo depende de autorização por escrito do dono do sistema, e os acessos de teste são revogados ao final.</p>
     </div>
   </section>
 
@@ -853,24 +898,23 @@ summary::-webkit-details-marker{display:none}
         <li><time>jul/2023 – jul/2024</time><div><h3>Fundador e desenvolvedor <span>· E-commerces próprios</span></h3><p>Criei e operei dois e-commerces, cuidando de toda a parte técnica: integrações com Mercado Livre, Melhor Envio e Pagar.me e sincronização de catálogo com importação em massa por CSV e XML. Encerrei a operação após uma análise de viabilidade e voltei ao mercado com mais visão de produto, operação e custo.</p></div></li>
         <li><time>jul/2021 – jun/2023</time><div><h3>Desenvolvedor full stack <span>· Hospital Israelita Albert Einstein</span></h3><p>Micro-frontends do catálogo de serviços do Portal Empresas (unidades, especialistas, produtos, serviços, regras e mailing), com controle de acesso por perfil, testes E2E em Cypress e pipelines no Azure DevOps.</p></div></li>
         <li><time>jan/2021 – jul/2021</time><div><h3>Desenvolvedor front-end e mobile <span>· SorocabaCom e Going2</span></h3><p>Interfaces com React, Next.js e TypeScript para produtos em produção (Unoerp, isEntrega) e um app em React Native para iOS e Android voltado a médicos residentes.</p></div></li>
-        <li><time>2020</time><div><h3>Estudo dedicado <span>· desenvolvimento web e mobile</span></h3><p>Período de estudo intensivo após a graduação, até a primeira vaga na área.</p></div></li>
-        <li><time>2016 – 2019</time><div><h3>Bacharelado em Ciência da Computação <span>· Estácio</span></h3><p>Trabalho de conclusão de curso em segurança da informação.</p></div></li>
+        <li><time>2016 – 2019</time><div><h3>Bacharelado em Ciência da Computação <span>· Estácio</span></h3><p>Trabalho de conclusão de curso em segurança da informação. Inglês avançado, com leitura e escrita técnica no dia a dia.</p></div></li>
       </ol>
     </div>
   </section>
 
   <section class="sec" id="stack">
-    <header><span class="n">05</span> <b>./stack</b>o que uso no dia a dia</header>
+    <header><span class="n">05</span> <b>./stack</b>núcleo em destaque</header>
     <div>
       <dl class="stack">
-        <div><dt>linguagens</dt><dd><span>TypeScript</span><span>Node.js</span><span>Python</span><span>SQL</span></dd></div>
-        <div><dt>backend</dt><dd><span>NestJS</span><span>tRPC</span><span>GraphQL</span><span>WebSocket (Socket.IO)</span><span>OpenAPI / Swagger</span><span>Prisma</span><span>Filas e mensageria</span><span>BullMQ</span><span>Idempotência e retentativas</span><span>Multi-tenant com RLS</span></dd></div>
-        <div><dt>front e mobile</dt><dd><span>React</span><span>Next.js</span><span>React Native</span><span>single-spa (micro-frontends)</span><span>React Query</span><span>Tailwind CSS</span><span>Zustand</span><span>Extensão do Chrome</span><span>Android</span></dd></div>
-        <div><dt>dados</dt><dd><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>Supabase</span><span>DynamoDB</span></dd></div>
-        <div><dt>ia</dt><dd><span>LLMs e agentes</span><span>Claude API</span><span>Vercel AI SDK</span><span>OpenAI API</span><span>Gemini API</span><span>RAG</span><span>MCP</span><span>Guardrails</span><span>Custo por chamada</span><span>Evals de agentes</span><span>Observabilidade de LLM</span><span>Langfuse</span><span>Busca vetorial</span><span>Claude Code</span></dd></div>
+        <div><dt>linguagens</dt><dd><span class="k">TypeScript</span><span class="k">Node.js</span><span>Python</span><span>SQL</span></dd></div>
+        <div><dt>backend</dt><dd><span class="k">NestJS</span><span>tRPC</span><span>GraphQL</span><span>WebSocket (Socket.IO)</span><span>OpenAPI / Swagger</span><span>Prisma</span><span>Filas e mensageria</span><span class="k">BullMQ</span><span>Idempotência e retentativas</span><span>Multi-tenant com RLS</span></dd></div>
+        <div><dt>front e mobile</dt><dd><span class="k">React</span><span class="k">Next.js</span><span>React Native</span><span>single-spa (micro-frontends)</span><span>React Query</span><span>Tailwind CSS</span><span>Zustand</span><span>Extensão do Chrome</span><span>Android</span></dd></div>
+        <div><dt>dados</dt><dd><span class="k">PostgreSQL</span><span class="k">MongoDB</span><span class="k">Redis</span><span>Supabase</span><span>DynamoDB</span></dd></div>
+        <div><dt>ia</dt><dd><span class="k">LLMs e agentes</span><span>Claude API</span><span>Vercel AI SDK</span><span>OpenAI API</span><span>Gemini API</span><span class="k">RAG</span><span class="k">MCP</span><span>Guardrails</span><span>Custo por chamada</span><span>Evals de agentes</span><span>Observabilidade de LLM</span><span>Langfuse</span><span>Busca vetorial</span><span>Claude Code</span></dd></div>
         <div><dt>integrações</dt><dd><span>WhatsApp Business API</span><span>Evolution API</span><span>Z-API</span><span>Meta</span><span>Stripe</span><span>Asaas</span><span>Mercado Pago</span></dd></div>
-        <div><dt>nuvem</dt><dd><span>AWS</span><span>SQS</span><span>Lambda</span><span>ECS</span><span>S3</span><span>Vercel</span></dd></div>
-        <div><dt>entrega</dt><dd><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>GitHub Actions</span><span>Azure DevOps</span></dd></div>
+        <div><dt>nuvem</dt><dd><span class="k">AWS</span><span>SQS</span><span>Lambda</span><span>ECS</span><span>S3</span><span>Vercel</span></dd></div>
+        <div><dt>entrega</dt><dd><span class="k">Docker</span><span>Kubernetes</span><span>Terraform</span><span>GitHub Actions</span><span>Azure DevOps</span></dd></div>
         <div><dt>testes e qualidade</dt><dd><span>Jest</span><span>Vitest</span><span>Cypress (E2E)</span><span>Sentry</span><span>OpenTelemetry</span><span>Grafana</span><span>Datadog</span></dd></div>
         <div><dt>segurança</dt><dd><span>OWASP WSTG</span><span>OWASP ASVS</span><span>OWASP API Security Top 10</span><span>Burp Suite</span><span>OWASP ZAP</span><span>nuclei</span><span>Semgrep</span><span>gitleaks</span><span>osv-scanner</span><span>Trivy</span><span>Checkov</span><span>Fortify</span><span>LGPD</span><span>OWASP Top 10 para LLMs</span></dd></div>
       </dl>
@@ -891,7 +935,6 @@ summary::-webkit-details-marker{display:none}
 <footer>
   <div class="wrap">
     <span>Rodrigo Barros · engenheiro de software · Teresina, PI · remoto</span>
-    <a href="/privacidade">aviso de privacidade</a>
   </div>
 </footer>
 </body>
