@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://rodrigobarros.tech/og.png">
 <link rel="canonical" href="https://rodrigobarros.tech/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Rodrigo Barros","url":"https://rodrigobarros.tech/","image":"https://rodrigobarros.tech/og.png","jobTitle":"Engenheiro de software full stack","description":"Backend e integrações, agentes de IA e segurança de aplicações para empresas brasileiras.","email":"mailto:rodrigo@rodrigobarros.tech","telephone":"+55-89-98120-0084","address":{"@type":"PostalAddress","addressLocality":"Teresina","addressRegion":"PI","addressCountry":"BR"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Estácio Ceut"},"knowsAbout":["Engenharia de software","Agentes de IA","Segurança de aplicações","Pentest web e API","Integrações","AWS"],"sameAs":["https://www.linkedin.com/in/rodrigobarros3","https://github.com/rodrigobarros2"]}
+{"@context":"https://schema.org","@type":"Person","name":"Rodrigo Barros","url":"https://rodrigobarros.tech/","image":"https://rodrigobarros.tech/rodrigo-barros-960.webp","jobTitle":"Engenheiro de software full stack","description":"Backend e integrações, agentes de IA e segurança de aplicações para empresas brasileiras.","email":"mailto:rodrigo@rodrigobarros.tech","telephone":"+55-89-98120-0084","address":{"@type":"PostalAddress","addressLocality":"Teresina","addressRegion":"PI","addressCountry":"BR"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Estácio Ceut"},"knowsAbout":["Engenharia de software","Agentes de IA","Segurança de aplicações","Pentest web e API","Integrações","AWS"],"sameAs":["https://www.linkedin.com/in/rodrigobarros3","https://github.com/rodrigobarros2"]}
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' text-anchor='middle' fill='white'%3ERB%3C/text%3E%3C/svg%3E">
 <style>
@@ -34,26 +34,45 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent)}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--accent);color:var(--accent-ink);padding:10px 14px;border-radius:8px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line);background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px)}
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
 .brand{font-weight:700;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
 nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-nav ul a{color:var(--muted);text-decoration:none;font-size:15px}
+nav ul a{color:var(--muted);text-decoration:none;font-size:15px;transition:color .15s}
 nav ul a:hover{color:var(--ink)}
-.hero{padding:72px 0 56px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,360px);gap:56px;align-items:center;padding:72px 20px 64px}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.025em;margin:0 0 18px;max-width:17ch}
-.lead{font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:62ch;margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+h1{font-size:clamp(32px,4.6vw,50px);line-height:1.08;letter-spacing:-.025em;margin:0 0 18px;max-width:17ch;text-wrap:balance}
+.lead{font-size:clamp(17px,2vw,19px);color:var(--muted);max-width:58ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:var(--card);transition:transform .15s,border-color .15s,box-shadow .15s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
+.btn.primary:hover{box-shadow:0 6px 18px -8px var(--accent)}
+.cta .more{display:flex;gap:18px;margin-left:6px;font-weight:600;font-size:15px}
+.cta .more a{color:var(--muted);text-decoration:none}
+.cta .more a:hover{color:var(--accent);text-decoration:underline}
+.portrait{margin:0;position:relative}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;border:1px solid var(--line);background:#0b0d12;box-shadow:0 30px 60px -32px rgba(8,12,20,.55)}
+.portrait figcaption{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;font-size:13px;font-weight:600;color:#eceef2;background:rgba(15,17,21,.72);border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.portrait figcaption::before{content:"";width:8px;height:8px;border-radius:50%;background:#2dd4bf;box-shadow:0 0 0 4px rgba(45,212,191,.22)}
+.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;align-items:start;gap:14px 24px;margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--line)}
+.facts div{display:flex;flex-direction:column-reverse}
+.facts dt{font-size:14px;color:var(--muted)}
+.facts dd{margin:0;font-size:26px;font-weight:700;letter-spacing:-.025em;line-height:1.15}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section[id],.block{scroll-margin-top:84px}
+h2{font-size:clamp(26px,3vw,32px);line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;text-wrap:balance}
 .sub{color:var(--muted);margin:0 0 28px;max-width:65ch}
 .grid{display:grid;gap:16px}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g2{grid-template-columns:repeat(2,1fr)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:0 14px 30px -24px rgba(8,12,20,.5)}
 .card h3{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
 .card p{margin:0 0 12px;color:var(--muted)}
 .card ul{margin:0;padding-left:18px}
@@ -91,6 +110,18 @@ h2{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}
 .block{margin-top:44px}
 .block>h3{font-size:21px;letter-spacing:-.015em;margin:0 0 6px}
 .block>.sub{margin-bottom:20px}
+.folds{margin-top:44px;display:grid;gap:12px}
+.fold{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.fold summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:18px 22px}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.fold summary span{grid-column:1;color:var(--muted);font-size:15px;max-width:80ch}
+.fold summary::after{content:"";grid-column:2;grid-row:1/span 2;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-3px) rotate(45deg);transition:transform .2s;margin:0 6px}
+.fold[open] summary::after{transform:translateY(3px) rotate(-135deg)}
+.fold summary:hover h3{color:var(--accent)}
+.foldbody{padding:4px 22px 22px}
+.foldbody .card{background:var(--bg)}
+.foldbody .ev li{background:var(--bg)}
 .callout{border:1px solid var(--accent);background:var(--soft);border-radius:14px;padding:20px 22px;margin-top:28px}
 .callout b{color:var(--ink)}
 .callout p{margin:0;color:var(--ink)}
@@ -113,40 +144,71 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px soli
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
 footer a{color:var(--muted)}
 @media (max-width:980px){nav ul{gap:14px}nav ul a{font-size:14px}}
-@media (max-width:860px){.g3,.g4,.steps{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){nav{flex-wrap:wrap;height:auto;padding:14px 0 10px;row-gap:8px}nav ul{width:100%;overflow-x:auto;gap:18px;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}nav ul::-webkit-scrollbar{display:none}nav ul a{white-space:nowrap}.g3,.g2,.g4,.steps,.ev{grid-template-columns:1fr}.hero{padding:48px 0 40px}.contact{padding:22px}}
+@media (max-width:860px){.g3,.g4,.steps{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr;gap:28px;padding-top:44px}.portrait{order:-1;display:flex;align-items:center;gap:14px}.portrait img{width:104px;aspect-ratio:1;object-position:50% 12%;border-radius:18px;box-shadow:none}.portrait figcaption{position:static;color:var(--ink);background:var(--card);border-color:var(--line)}section{padding:56px 0}}
+@media (max-width:600px){nav{flex-wrap:wrap;height:auto;padding:14px 0 10px;row-gap:8px}nav ul{width:100%;overflow-x:auto;gap:18px;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}nav ul::-webkit-scrollbar{display:none}nav ul a{white-space:nowrap}.g3,.g2,.g4,.steps,.ev{grid-template-columns:1fr}.hero{padding:36px 20px 40px}.contact{padding:22px}.cta .btn{flex:1 1 100%;justify-content:center}.cta .more{margin:4px 0 0}.facts{grid-template-columns:1fr 1fr}.facts dd{font-size:22px}.fold summary{padding:16px}.foldbody{padding:0 16px 16px}section[id],.block{scroll-margin-top:110px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header>
   <div class="wrap">
     <nav>
       <a class="brand" href="#">Rodrigo Barros</a>
       <ul>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#seguranca">Segurança</a></li>
         <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#servicos">Serviços</a></li>
         <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#seguranca">Segurança</a></li>
         <li><a href="#como">Como trabalho</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
   <div class="wrap hero">
-    <span class="eyebrow">Engenharia de software · IA aplicada · Segurança</span>
-    <h1>Construo, automatizo e protejo o software da sua empresa.</h1>
-    <p class="lead">Sou engenheiro de software full stack com mais de 5 anos entregando produtos de ponta a ponta. Hoje sou responsável técnico de uma plataforma com IA usada por 112 escritórios, em que agentes conduzem cerca de 39 mil conversas por mês no WhatsApp. Atendo empresas de todo o Brasil, de forma remota, como PJ.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:rodrigo@rodrigobarros.tech?subject=Conversa%20sobre%20um%20projeto">Conversar sobre um projeto</a>
-      <a class="btn" href="https://wa.me/5589981200084?text=Ol%C3%A1%2C%20Rodrigo!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20um%20projeto." rel="noopener">WhatsApp (89) 98120-0084</a>
-      <a class="btn" href="https://www.linkedin.com/in/rodrigobarros3" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://github.com/rodrigobarros2" rel="noopener">GitHub</a>
+    <div>
+      <span class="eyebrow">Engenharia de software · IA aplicada · Segurança</span>
+      <h1>Construo, automatizo e protejo o software da sua empresa.</h1>
+      <p class="lead">Sou engenheiro de software full stack com mais de 5 anos entregando produtos de ponta a ponta. Hoje sou responsável técnico de uma plataforma com IA usada por 112 escritórios, em que agentes conduzem cerca de 39 mil conversas por mês no WhatsApp. Atendo empresas de todo o Brasil, de forma remota, como PJ.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:rodrigo@rodrigobarros.tech?subject=Conversa%20sobre%20um%20projeto">Conversar sobre um projeto</a>
+        <a class="btn" href="https://wa.me/5589981200084?text=Ol%C3%A1%2C%20Rodrigo!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20um%20projeto." rel="noopener">WhatsApp (89) 98120-0084</a>
+        <span class="more">
+          <a href="https://www.linkedin.com/in/rodrigobarros3" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/rodrigobarros2" rel="noopener">GitHub</a>
+        </span>
+      </div>
+      <dl class="facts">
+        <div><dt>anos em produção</dt><dd>5+</dd></div>
+        <div><dt>escritórios na plataforma</dt><dd>112</dd></div>
+        <div><dt>conversas por mês com IA</dt><dd>39 mil</dd></div>
+        <div><dt>integrações no ar</dt><dd>15+</dd></div>
+      </dl>
     </div>
+    <figure class="portrait">
+      <img src="/rodrigo-barros-480.webp" srcset="/rodrigo-barros-480.webp 480w, /rodrigo-barros-960.webp 960w" sizes="(max-width:860px) 150px, 360px" width="480" height="600" alt="Rodrigo Barros, de camiseta preta e braços cruzados, sorrindo" fetchpriority="high" decoding="async">
+      <figcaption>Teresina/PI · remoto em todo o Brasil</figcaption>
+    </figure>
   </div>
+
+  <section id="resultados">
+    <div class="wrap">
+      <h2>Resultados em produção</h2>
+      <p class="sub">Números de projetos em que trabalhei diretamente.</p>
+      <div class="grid g3">
+        <div class="card proof"><div class="num">39 mil <small>conversas/mês</small></div><p>conduzidas por agentes de IA no WhatsApp, do primeiro contato ao contrato assinado, numa plataforma usada por 112 escritórios.</p></div>
+        <div class="card proof"><div class="num">600 → 155 <small>ms</small></div><p>de tempo de resposta (p50) numa API, com diagnóstico e ajuste no banco de dados.</p></div>
+        <div class="card proof"><div class="num">−31% <small>custo de IA</small></div><p>no gasto diário com modelos de linguagem, medindo o custo de cada chamada.</p></div>
+        <div class="card proof"><div class="num">15+ <small>integrações</small></div><p>em produção (WhatsApp Business, Stripe, Meta, PJe, Google Calendar, ZapSign, Clicksign, Docusign) com filas, retentativas e idempotência.</p></div>
+        <div class="card proof"><div class="num">0 <small>cobranças duplicadas</small></div><p>depois de migrar 11 tipos de consulta para processamento em background com idempotência.</p></div>
+        <div class="card proof"><div class="num">770+ <small>commits</small></div><p>e 180 PRs no back-office do agendamento online do Hospital Israelita Albert Einstein, como principal autor de 4 micro-frontends.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section id="servicos">
     <div class="wrap">
@@ -187,194 +249,6 @@ footer a{color:var(--muted)}
           </ul>
           <div class="links"><a href="#seguranca">Como funciona a segurança →</a></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="seguranca">
-    <div class="wrap">
-      <span class="eyebrow">Segurança de aplicações</span>
-      <h2>Segurança feita por quem também constrói o produto</h2>
-      <p class="sub">Eu não entrego só uma lista de problemas. Encontro a falha, provo o risco sem tocar nos dados dos seus clientes, corrijo no seu código e testo de novo. Como eu também escrevo e opero sistemas em produção, a correção não quebra o app.</p>
-
-      <div class="grid g3">
-        <div class="card mini"><h3>Só com autorização por escrito</h3><p>Nenhum teste ativo começa sem termo assinado, escopo definido e regras de engajamento. Antes disso, olho só o que qualquer visitante vê.</p></div>
-        <div class="card mini"><h3>Prova sem expor dados</h3><p>Mostro o risco pela contagem e pela estrutura ("24 registros visíveis sem login"), nunca pelo conteúdo. Nada de dado pessoal sai do seu ambiente.</p></div>
-        <div class="card mini"><h3>Eu corrijo, não só aponto</h3><p>As correções vão para o seu repositório, com reteste e um relatório de antes e depois que o dono do negócio entende.</p></div>
-      </div>
-
-      <div class="block">
-        <h3>O que eu verifico</h3>
-        <p class="sub">Um checklist com mais de 50 itens, baseado no OWASP (WSTG, ASVS e API Security Top 10), mais testes manuais do que scanner nenhum pega.</p>
-        <div class="grid g4">
-          <div class="card mini"><h4>Banco e controle de acesso</h4><p>RLS do Supabase/Postgres, policies sempre verdadeiras, UPDATE sem checagem, views e funções que furam as regras.</p></div>
-          <div class="card mini"><h4>IDOR e multi-tenant</h4><p>Duas contas de teste: o usuário B consegue ler ou alterar os dados do A? Uma empresa enxerga a outra?</p></div>
-          <div class="card mini"><h4>Segredos</h4><p>Chaves no JavaScript público, source maps expostos, segredos no histórico do Git e rotação do que vazou.</p></div>
-          <div class="card mini"><h4>Autenticação</h4><p>Admin definido pelo próprio usuário, rotas protegidas só no front, sessão, recuperação de senha e enumeração de e-mails.</p></div>
-          <div class="card mini"><h4>Pagamentos e webhooks</h4><p>Preço calculado no cliente, status "pago" alterável, webhook sem assinatura, sem reconsulta ou sem idempotência.</p></div>
-          <div class="card mini"><h4>APIs e integrações</h4><p>Rotas abertas sem login, SSRF em URLs informadas pelo usuário, CORS, limite de requisições em login, OTP e chamadas que geram custo.</p></div>
-          <div class="card mini"><h4>Recursos de IA</h4><p>Prompt injection, vazamento das regras internas e de dados, e ações da IA executadas sem checagem no servidor.</p></div>
-          <div class="card mini"><h4>LGPD e ECA Digital</h4><p>Inventário de dados pessoais, minimização, exclusão de conta, canal do titular, dados sensíveis e app acessível a menores.</p></div>
-        </div>
-      </div>
-
-      <div class="block">
-        <h3>Como é um trabalho de segurança</h3>
-        <p class="sub">Do primeiro olhar até o acompanhamento, sem surpresa no escopo nem no preço.</p>
-        <ol class="steps">
-          <li><b>Raio-X público</b><span>O que qualquer visitante vê do seu app, em um vídeo curto. Gratuito e sem nenhum teste ativo.</span></li>
-          <li><b>Autorização</b><span>Termo assinado, escopo, contas de teste, janelas de horário e acordo de confidencialidade e tratamento de dados.</span></li>
-          <li><b>Testes e correção</b><span>Varredura automatizada, testes manuais de acesso e pagamento, e correção no seu código.</span></li>
-          <li><b>Reteste e relatório</b><span>Prova de antes e depois de cada achado, com o que só você pode fazer (ex.: trocar uma chave vazada).</span></li>
-        </ol>
-      </div>
-
-      <div class="block">
-        <h3>Exemplo de entrega: app de clínica</h3>
-        <p class="sub">Montei um app de clínica vulnerável de propósito, com dados 100% fictícios, para mostrar exatamente o que você recebe. Foram 10 achados (7 críticos e 3 altos) e todos foram corrigidos.</p>
-        <div class="tablewrap">
-          <table class="ba">
-            <thead><tr><th>Achado</th><th>Antes</th><th>Depois</th></tr></thead>
-            <tbody>
-              <tr><td>Tabela de pacientes sem RLS</td><td class="bad">24 pacientes com CPF e anotações clínicas visíveis sem login</td><td class="ok">0 visíveis</td></tr>
-              <tr><td>Um profissional vê os dados do outro</td><td class="bad">12 pacientes e 12 agendamentos alheios</td><td class="ok">0</td></tr>
-              <tr><td>Qualquer usuário vira admin</td><td class="bad">Bastava editar o próprio cadastro</td><td class="ok">Papel só pelo servidor</td></tr>
-              <tr><td>Usuário marca o próprio pagamento como pago</td><td class="bad">Aceito pelo servidor</td><td class="ok">Só via webhook validado</td></tr>
-              <tr><td>Chave mestra do banco no navegador</td><td class="bad">Exposta no JavaScript público</td><td class="ok">Removida do código e troca orientada</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="block">
-        <h3>Laboratório público: AppSec num SaaS na AWS</h3>
-        <p class="sub">Um serviço de pedidos e cupons para restaurantes (API Gateway, Lambda, SQS, DynamoDB, S3, KMS, Secrets Manager e WAF, tudo em Terraform), em versão vulnerável e corrigida. A esteira roda nas duas: a corrigida precisa passar, e a vulnerável precisa ser barrada. Assim fica provado que cada ferramenta pega a falha.</p>
-        <div class="tablewrap">
-          <table class="ba">
-            <thead><tr><th>Verificação</th><th>Versão vulnerável</th><th>Versão corrigida</th></tr></thead>
-            <tbody>
-              <tr><td>Testes de abuso (IDOR, token forjado, desconto do cliente, cupom resgatado duas vezes, webhook sem assinatura)</td><td class="bad">11 falhas provadas</td><td class="ok">Todas bloqueadas</td></tr>
-              <tr><td>SAST com regras da casa (Semgrep)</td><td class="bad">9 achados</td><td class="ok">0</td></tr>
-              <tr><td>Infraestrutura como código (Checkov)</td><td class="bad">77 reprovações: IAM *:*, S3 público, SSH aberto</td><td class="ok">0 reprovações, exceções justificadas</td></tr>
-              <tr><td>Segredos, dependências, container e DAST (gitleaks, osv-scanner, Trivy, Hadolint, OWASP ZAP)</td><td class="bad">Barrada em todas</td><td class="ok">Aprovada</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p style="margin:14px 0 0;font-weight:600"><a href="https://github.com/rodrigobarros2/appsec-aws-lab" rel="noopener">Ver o laboratório no GitHub →</a></p>
-      </div>
-
-      <div class="block">
-        <h3>Segurança no meu dia a dia de produto</h3>
-        <p class="sub">O que eu aplico na plataforma com IA da qual sou responsável técnico, usada por 112 escritórios de advocacia.</p>
-        <ul class="ev">
-          <li><b>Proteção contra SSRF</b>em ferramentas HTTP e MCP configuráveis pelo cliente e no download de mídia, ligada em modo sombra antes de bloquear.</li>
-          <li><b>Webhooks autenticados</b>com segredo ou HMAC nos provedores de WhatsApp e de assinatura eletrônica, e state assinado no login OAuth.</li>
-          <li><b>Isolamento entre clientes</b>com correções que impedem uma empresa de ver ou agir em conversas, canais e arquivos de outra.</li>
-          <li><b>Dados pessoais fora dos logs</b>com telefone, e-mail, tokens e segredos mascarados nos logs, no Sentry e nas respostas da API.</li>
-          <li><b>Pipeline seguro</b>com gitleaks no histórico, Semgrep no CI e Dependabot. Dependências de produção foram de 3 vulnerabilidades críticas e 19 altas para zero.</li>
-          <li><b>Acesso administrativo com limite</b>com teto de 24 h e escopo restrito para o modo "entrar como" do suporte, no HTTP e no WebSocket.</li>
-          <li><b>Guardrails de IA</b>que bloqueiam o vazamento das regras internas do agente e de dados da equipe para o lead.</li>
-          <li><b>Proteção contra log forging</b>e mensagens de erro que não revelam detalhes internos.</li>
-        </ul>
-      </div>
-
-      <div class="block">
-        <h3>Pacotes</h3>
-        <p class="sub">Escolha pelo momento da sua empresa. Os preços são fechados depois de um diagnóstico curto.</p>
-        <div class="grid g3">
-          <div class="card">
-            <span class="tag">Apps feitos com IA</span>
-            <h3>Blindagem</h3>
-            <p>Auditoria e correção de apps feitos com Lovable, Bolt, Cursor ou Replit com backend Supabase, em 5 dias úteis.</p>
-            <p class="price">R$ 1.990 <small>Essencial</small> · R$ 3.990 <small>Completa</small></p>
-          </div>
-          <div class="card">
-            <span class="tag">SaaS e APIs</span>
-            <h3>Pentest web e API</h3>
-            <p>Teste autorizado com base no OWASP, relatório executivo e técnico, reteste em 30 dias e carta de atestação para clientes e investidores.</p>
-          </div>
-          <div class="card">
-            <span class="tag">Times de produto</span>
-            <h3>AppSec e pipeline seguro</h3>
-            <p>Modelagem de ameaças, revisão de código dos fluxos críticos, SAST, dependências e segredos no CI, e treinamento do time.</p>
-          </div>
-          <div class="card">
-            <span class="tag">Venda para empresas grandes</span>
-            <h3>Questionário de segurança</h3>
-            <p>Políticas mínimas, evidências e respostas padronizadas para não travar a venda em due diligence.</p>
-          </div>
-          <div class="card">
-            <span class="tag">Contínuo</span>
-            <h3>Guarda e AppSec fracionado</h3>
-            <p>Reverificação a cada atualização com relatório mensal, ou um responsável por segurança algumas horas por mês.</p>
-            <p class="price">a partir de R$ 297<small>/mês</small></p>
-          </div>
-          <div class="card">
-            <span class="tag">Entrada</span>
-            <h3>Check-up externo</h3>
-            <p>O que um atacante vê da sua empresa na internet: e-mail (SPF, DKIM, DMARC), TLS, cabeçalhos e LGPD do site.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="block">
-        <h3>Ferramentas que eu uso</h3>
-        <p class="sub">Meu ambiente roda no Kali Linux, empacotado numa imagem Docker com as versões fixadas, para que cada auditoria seja reproduzível. Os testes ativos só rodam com autorização. Os scripts do kit se recusam a rodar sem a trava de autorização.</p>
-        <div class="grid g3">
-          <div class="card mini">
-            <h4>Teste manual e proxy</h4>
-            <p>Interceptação e teste das regras de acesso, IDOR e lógica de pagamento.</p>
-            <div class="stack"><span>Burp Suite</span><span>OWASP ZAP</span><span>jwt_tool</span><span>Corsy</span></div>
-          </div>
-          <div class="card mini">
-            <h4>Varredura de vulnerabilidades</h4>
-            <p>Templates de CVE e de configuração incorreta, injeção, XSS, CMS e parâmetros escondidos.</p>
-            <div class="stack"><span>nuclei</span><span>nikto</span><span>sqlmap</span><span>dalfox</span><span>wpscan</span><span>ffuf</span><span>arjun</span></div>
-          </div>
-          <div class="card mini">
-            <h4>Superfície e reconhecimento</h4>
-            <p>O que está exposto na internet: subdomínios, tecnologias, WAF, rotas e URLs antigas.</p>
-            <div class="stack"><span>subfinder</span><span>amass</span><span>dnsrecon</span><span>theHarvester</span><span>crt.sh</span><span>whois</span><span>dig</span><span>whatweb</span><span>wafw00f</span><span>katana</span><span>gau</span><span>gf</span></div>
-          </div>
-          <div class="card mini">
-            <h4>TLS e rede</h4>
-            <p>Certificados, protocolos e cifras, cabeçalhos de segurança e serviços expostos.</p>
-            <div class="stack"><span>sslscan</span><span>sslyze</span><span>nmap</span><span>curl</span></div>
-          </div>
-          <div class="card mini">
-            <h4>Código, segredos e dependências</h4>
-            <p>Análise estática, segredos no histórico do Git e bibliotecas com vulnerabilidade conhecida.</p>
-            <div class="stack"><span>Semgrep</span><span>gitleaks</span><span>osv-scanner</span><span>npm audit</span><span>retire.js</span><span>Dependabot</span><span>Fortify</span></div>
-          </div>
-          <div class="card mini">
-            <h4>Kit próprio (Supabase, Firebase e APIs)</h4>
-            <p>Scripts que eu escrevi para o que os scanners não pegam, com testes de regressão contra falso positivo.</p>
-            <div class="stack"><span>RLS do Supabase</span><span>auditoria do Supabase</span><span>IDOR com 2 contas</span><span>rotas de API</span><span>rate limit</span><span>webhook de pagamento</span><span>regras do Firebase</span><span>source maps</span><span>serviços expostos</span><span>varredura do bundle JS</span><span>Guarda com diff</span></div>
-          </div>
-        </div>
-        <div class="stack" style="margin-top:16px">
-          <span>Kali Linux</span><span>Docker</span><span>Supabase CLI</span><span>Postgres</span><span>Node.js</span><span>Python</span><span>Go</span><span>jq</span><span>OWASP WSTG</span><span>OWASP ASVS</span><span>OWASP API Security Top 10</span><span>LGPD</span><span>ECA Digital</span>
-        </div>
-      </div>
-
-      <div class="callout">
-        <p><b>Segurança dentro da lei.</b> Testar um sistema sem autorização é crime no Brasil (Lei 12.737/2012, art. 154-A do Código Penal). Por isso todo teste ativo depende de autorização por escrito do dono do sistema, e os acessos de teste são revogados ao final.</p>
-        <p>Sou formado em Ciência da Computação com TCC em segurança da informação.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="resultados">
-    <div class="wrap">
-      <h2>Resultados em produção</h2>
-      <p class="sub">Números de projetos em que trabalhei diretamente.</p>
-      <div class="grid g3">
-        <div class="card proof"><div class="num">39 mil <small>conversas/mês</small></div><p>conduzidas por agentes de IA no WhatsApp, do primeiro contato ao contrato assinado, numa plataforma usada por 112 escritórios.</p></div>
-        <div class="card proof"><div class="num">600 → 155 <small>ms</small></div><p>de tempo de resposta (p50) numa API, com diagnóstico e ajuste no banco de dados.</p></div>
-        <div class="card proof"><div class="num">−31% <small>custo de IA</small></div><p>no gasto diário com modelos de linguagem, medindo o custo de cada chamada.</p></div>
-        <div class="card proof"><div class="num">15+ <small>integrações</small></div><p>em produção (WhatsApp Business, Stripe, Meta, PJe, Google Calendar, ZapSign, Clicksign, Docusign) com filas, retentativas e idempotência.</p></div>
-        <div class="card proof"><div class="num">0 <small>cobranças duplicadas</small></div><p>depois de migrar 11 tipos de consulta para processamento em background com idempotência.</p></div>
-        <div class="card proof"><div class="num">770+ <small>commits</small></div><p>e 180 PRs no back-office do agendamento online do Hospital Israelita Albert Einstein, como principal autor de 4 micro-frontends.</p></div>
       </div>
     </div>
   </section>
@@ -447,6 +321,195 @@ footer a{color:var(--muted)}
     </div>
   </section>
 
+  <section id="seguranca">
+    <div class="wrap">
+      <span class="eyebrow">Segurança de aplicações</span>
+      <h2>Segurança feita por quem também constrói o produto</h2>
+      <p class="sub">Eu não entrego só uma lista de problemas. Encontro a falha, provo o risco sem tocar nos dados dos seus clientes, corrijo no seu código e testo de novo. Como eu também escrevo e opero sistemas em produção, a correção não quebra o app.</p>
+
+      <div class="grid g3">
+        <div class="card mini"><h3>Só com autorização por escrito</h3><p>Nenhum teste ativo começa sem termo assinado, escopo definido e regras de engajamento. Antes disso, olho só o que qualquer visitante vê.</p></div>
+        <div class="card mini"><h3>Prova sem expor dados</h3><p>Mostro o risco pela contagem e pela estrutura ("24 registros visíveis sem login"), nunca pelo conteúdo. Nada de dado pessoal sai do seu ambiente.</p></div>
+        <div class="card mini"><h3>Eu corrijo, não só aponto</h3><p>As correções vão para o seu repositório, com reteste e um relatório de antes e depois que o dono do negócio entende.</p></div>
+      </div>
+
+      <div class="block">
+        <h3>Como é um trabalho de segurança</h3>
+        <p class="sub">Do primeiro olhar até o acompanhamento, sem surpresa no escopo nem no preço.</p>
+        <ol class="steps">
+          <li><b>Raio-X público</b><span>O que qualquer visitante vê do seu app, em um vídeo curto. Gratuito e sem nenhum teste ativo.</span></li>
+          <li><b>Autorização</b><span>Termo assinado, escopo, contas de teste, janelas de horário e acordo de confidencialidade e tratamento de dados.</span></li>
+          <li><b>Testes e correção</b><span>Varredura automatizada, testes manuais de acesso e pagamento, e correção no seu código.</span></li>
+          <li><b>Reteste e relatório</b><span>Prova de antes e depois de cada achado, com o que só você pode fazer (ex.: trocar uma chave vazada).</span></li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <h3>Exemplo de entrega: app de clínica</h3>
+        <p class="sub">Montei um app de clínica vulnerável de propósito, com dados 100% fictícios, para mostrar exatamente o que você recebe. Foram 10 achados (7 críticos e 3 altos) e todos foram corrigidos.</p>
+        <div class="tablewrap">
+          <table class="ba">
+            <thead><tr><th>Achado</th><th>Antes</th><th>Depois</th></tr></thead>
+            <tbody>
+              <tr><td>Tabela de pacientes sem RLS</td><td class="bad">24 pacientes com CPF e anotações clínicas visíveis sem login</td><td class="ok">0 visíveis</td></tr>
+              <tr><td>Um profissional vê os dados do outro</td><td class="bad">12 pacientes e 12 agendamentos alheios</td><td class="ok">0</td></tr>
+              <tr><td>Qualquer usuário vira admin</td><td class="bad">Bastava editar o próprio cadastro</td><td class="ok">Papel só pelo servidor</td></tr>
+              <tr><td>Usuário marca o próprio pagamento como pago</td><td class="bad">Aceito pelo servidor</td><td class="ok">Só via webhook validado</td></tr>
+              <tr><td>Chave mestra do banco no navegador</td><td class="bad">Exposta no JavaScript público</td><td class="ok">Removida do código e troca orientada</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Pacotes</h3>
+        <p class="sub">Escolha pelo momento da sua empresa. Os preços são fechados depois de um diagnóstico curto.</p>
+        <div class="grid g3">
+          <div class="card">
+            <span class="tag">Apps feitos com IA</span>
+            <h3>Blindagem</h3>
+            <p>Auditoria e correção de apps feitos com Lovable, Bolt, Cursor ou Replit com backend Supabase, em 5 dias úteis.</p>
+            <p class="price">R$ 1.990 <small>Essencial</small> · R$ 3.990 <small>Completa</small></p>
+          </div>
+          <div class="card">
+            <span class="tag">SaaS e APIs</span>
+            <h3>Pentest web e API</h3>
+            <p>Teste autorizado com base no OWASP, relatório executivo e técnico, reteste em 30 dias e carta de atestação para clientes e investidores.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Times de produto</span>
+            <h3>AppSec e pipeline seguro</h3>
+            <p>Modelagem de ameaças, revisão de código dos fluxos críticos, SAST, dependências e segredos no CI, e treinamento do time.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Venda para empresas grandes</span>
+            <h3>Questionário de segurança</h3>
+            <p>Políticas mínimas, evidências e respostas padronizadas para não travar a venda em due diligence.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Contínuo</span>
+            <h3>Guarda e AppSec fracionado</h3>
+            <p>Reverificação a cada atualização com relatório mensal, ou um responsável por segurança algumas horas por mês.</p>
+            <p class="price">a partir de R$ 297<small>/mês</small></p>
+          </div>
+          <div class="card">
+            <span class="tag">Entrada</span>
+            <h3>Check-up externo</h3>
+            <p>O que um atacante vê da sua empresa na internet: e-mail (SPF, DKIM, DMARC), TLS, cabeçalhos e LGPD do site.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Laboratório público: AppSec num SaaS na AWS</h3>
+        <p class="sub">Um serviço de pedidos e cupons para restaurantes (API Gateway, Lambda, SQS, DynamoDB, S3, KMS, Secrets Manager e WAF, tudo em Terraform), em versão vulnerável e corrigida. A esteira roda nas duas: a corrigida precisa passar, e a vulnerável precisa ser barrada. Assim fica provado que cada ferramenta pega a falha.</p>
+        <div class="tablewrap">
+          <table class="ba">
+            <thead><tr><th>Verificação</th><th>Versão vulnerável</th><th>Versão corrigida</th></tr></thead>
+            <tbody>
+              <tr><td>Testes de abuso (IDOR, token forjado, desconto do cliente, cupom resgatado duas vezes, webhook sem assinatura)</td><td class="bad">11 falhas provadas</td><td class="ok">Todas bloqueadas</td></tr>
+              <tr><td>SAST com regras da casa (Semgrep)</td><td class="bad">9 achados</td><td class="ok">0</td></tr>
+              <tr><td>Infraestrutura como código (Checkov)</td><td class="bad">77 reprovações: IAM *:*, S3 público, SSH aberto</td><td class="ok">0 reprovações, exceções justificadas</td></tr>
+              <tr><td>Segredos, dependências, container e DAST (gitleaks, osv-scanner, Trivy, Hadolint, OWASP ZAP)</td><td class="bad">Barrada em todas</td><td class="ok">Aprovada</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin:14px 0 0;font-weight:600"><a href="https://github.com/rodrigobarros2/appsec-aws-lab" rel="noopener">Ver o laboratório no GitHub →</a></p>
+      </div>
+
+      <div class="folds">
+      <details class="fold">
+        <summary><h3>O que eu verifico</h3><span>Um checklist com mais de 50 itens, baseado no OWASP (WSTG, ASVS e API Security Top 10), mais testes manuais do que scanner nenhum pega.</span></summary>
+        <div class="foldbody">
+        <div class="grid g4">
+          <div class="card mini"><h4>Banco e controle de acesso</h4><p>RLS do Supabase/Postgres, policies sempre verdadeiras, UPDATE sem checagem, views e funções que furam as regras.</p></div>
+          <div class="card mini"><h4>IDOR e multi-tenant</h4><p>Duas contas de teste: o usuário B consegue ler ou alterar os dados do A? Uma empresa enxerga a outra?</p></div>
+          <div class="card mini"><h4>Segredos</h4><p>Chaves no JavaScript público, source maps expostos, segredos no histórico do Git e rotação do que vazou.</p></div>
+          <div class="card mini"><h4>Autenticação</h4><p>Admin definido pelo próprio usuário, rotas protegidas só no front, sessão, recuperação de senha e enumeração de e-mails.</p></div>
+          <div class="card mini"><h4>Pagamentos e webhooks</h4><p>Preço calculado no cliente, status "pago" alterável, webhook sem assinatura, sem reconsulta ou sem idempotência.</p></div>
+          <div class="card mini"><h4>APIs e integrações</h4><p>Rotas abertas sem login, SSRF em URLs informadas pelo usuário, CORS, limite de requisições em login, OTP e chamadas que geram custo.</p></div>
+          <div class="card mini"><h4>Recursos de IA</h4><p>Prompt injection, vazamento das regras internas e de dados, e ações da IA executadas sem checagem no servidor.</p></div>
+          <div class="card mini"><h4>LGPD e ECA Digital</h4><p>Inventário de dados pessoais, minimização, exclusão de conta, canal do titular, dados sensíveis e app acessível a menores.</p></div>
+        </div>
+        </div>
+      </details>
+      <details class="fold">
+        <summary><h3>Segurança no meu dia a dia de produto</h3><span>O que eu aplico na plataforma com IA da qual sou responsável técnico, usada por 112 escritórios de advocacia.</span></summary>
+        <div class="foldbody">
+        <ul class="ev">
+          <li><b>Proteção contra SSRF</b>em ferramentas HTTP e MCP configuráveis pelo cliente e no download de mídia, ligada em modo sombra antes de bloquear.</li>
+          <li><b>Webhooks autenticados</b>com segredo ou HMAC nos provedores de WhatsApp e de assinatura eletrônica, e state assinado no login OAuth.</li>
+          <li><b>Isolamento entre clientes</b>com correções que impedem uma empresa de ver ou agir em conversas, canais e arquivos de outra.</li>
+          <li><b>Dados pessoais fora dos logs</b>com telefone, e-mail, tokens e segredos mascarados nos logs, no Sentry e nas respostas da API.</li>
+          <li><b>Pipeline seguro</b>com gitleaks no histórico, Semgrep no CI e Dependabot. Dependências de produção foram de 3 vulnerabilidades críticas e 19 altas para zero.</li>
+          <li><b>Acesso administrativo com limite</b>com teto de 24 h e escopo restrito para o modo "entrar como" do suporte, no HTTP e no WebSocket.</li>
+          <li><b>Guardrails de IA</b>que bloqueiam o vazamento das regras internas do agente e de dados da equipe para o lead.</li>
+          <li><b>Proteção contra log forging</b>e mensagens de erro que não revelam detalhes internos.</li>
+        </ul>
+        </div>
+      </details>
+      <details class="fold">
+        <summary><h3>Ferramentas que eu uso</h3><span>Meu ambiente roda no Kali Linux, empacotado numa imagem Docker com as versões fixadas, para que cada auditoria seja reproduzível. Os testes ativos só rodam com autorização. Os scripts do kit se recusam a rodar sem a trava de autorização.</span></summary>
+        <div class="foldbody">
+        <div class="grid g3">
+          <div class="card mini">
+            <h4>Teste manual e proxy</h4>
+            <p>Interceptação e teste das regras de acesso, IDOR e lógica de pagamento.</p>
+            <div class="stack"><span>Burp Suite</span><span>OWASP ZAP</span><span>jwt_tool</span><span>Corsy</span></div>
+          </div>
+          <div class="card mini">
+            <h4>Varredura de vulnerabilidades</h4>
+            <p>Templates de CVE e de configuração incorreta, injeção, XSS, CMS e parâmetros escondidos.</p>
+            <div class="stack"><span>nuclei</span><span>nikto</span><span>sqlmap</span><span>dalfox</span><span>wpscan</span><span>ffuf</span><span>arjun</span></div>
+          </div>
+          <div class="card mini">
+            <h4>Superfície e reconhecimento</h4>
+            <p>O que está exposto na internet: subdomínios, tecnologias, WAF, rotas e URLs antigas.</p>
+            <div class="stack"><span>subfinder</span><span>amass</span><span>dnsrecon</span><span>theHarvester</span><span>crt.sh</span><span>whois</span><span>dig</span><span>whatweb</span><span>wafw00f</span><span>katana</span><span>gau</span><span>gf</span></div>
+          </div>
+          <div class="card mini">
+            <h4>TLS e rede</h4>
+            <p>Certificados, protocolos e cifras, cabeçalhos de segurança e serviços expostos.</p>
+            <div class="stack"><span>sslscan</span><span>sslyze</span><span>nmap</span><span>curl</span></div>
+          </div>
+          <div class="card mini">
+            <h4>Código, segredos e dependências</h4>
+            <p>Análise estática, segredos no histórico do Git e bibliotecas com vulnerabilidade conhecida.</p>
+            <div class="stack"><span>Semgrep</span><span>gitleaks</span><span>osv-scanner</span><span>npm audit</span><span>retire.js</span><span>Dependabot</span><span>Fortify</span></div>
+          </div>
+          <div class="card mini">
+            <h4>Kit próprio (Supabase, Firebase e APIs)</h4>
+            <p>Scripts que eu escrevi para o que os scanners não pegam, com testes de regressão contra falso positivo.</p>
+            <div class="stack"><span>RLS do Supabase</span><span>auditoria do Supabase</span><span>IDOR com 2 contas</span><span>rotas de API</span><span>rate limit</span><span>webhook de pagamento</span><span>regras do Firebase</span><span>source maps</span><span>serviços expostos</span><span>varredura do bundle JS</span><span>Guarda com diff</span></div>
+          </div>
+        </div>
+        <div class="stack" style="margin-top:16px">
+          <span>Kali Linux</span><span>Docker</span><span>Supabase CLI</span><span>Postgres</span><span>Node.js</span><span>Python</span><span>Go</span><span>jq</span><span>OWASP WSTG</span><span>OWASP ASVS</span><span>OWASP API Security Top 10</span><span>LGPD</span><span>ECA Digital</span>
+        </div>
+        </div>
+      </details>
+      </div>
+
+      <div class="callout">
+        <p><b>Segurança dentro da lei.</b> Testar um sistema sem autorização é crime no Brasil (Lei 12.737/2012, art. 154-A do Código Penal). Por isso todo teste ativo depende de autorização por escrito do dono do sistema, e os acessos de teste são revogados ao final.</p>
+        <p>Sou formado em Ciência da Computação com TCC em segurança da informação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Como trabalho</h2>
+      <p class="sub">Escopo claro, entregas curtas e você acompanhando tudo.</p>
+      <ol class="steps">
+        <li><b>Conversa</b><span>30 minutos para entender o problema e o contexto. Sem custo.</span></li>
+        <li><b>Diagnóstico</b><span>Levantamento curto, com plano, prazo e preço fechados.</span></li>
+        <li><b>Entrega</b><span>Ciclos semanais com código no seu repositório, testes e documentação.</span></li>
+        <li><b>Acompanhamento</b><span>Garantia após a entrega e, se fizer sentido, evolução mensal.</span></li>
+      </ol>
+    </div>
+  </section>
+
   <section id="trajetoria">
     <div class="wrap">
       <h2>Trajetória</h2>
@@ -486,20 +549,7 @@ footer a{color:var(--muted)}
     </div>
   </section>
 
-  <section id="como">
-    <div class="wrap">
-      <h2>Como trabalho</h2>
-      <p class="sub">Escopo claro, entregas curtas e você acompanhando tudo.</p>
-      <ol class="steps">
-        <li><b>Conversa</b><span>30 minutos para entender o problema e o contexto. Sem custo.</span></li>
-        <li><b>Diagnóstico</b><span>Levantamento curto, com plano, prazo e preço fechados.</span></li>
-        <li><b>Entrega</b><span>Ciclos semanais com código no seu repositório, testes e documentação.</span></li>
-        <li><b>Acompanhamento</b><span>Garantia após a entrega e, se fizer sentido, evolução mensal.</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
+  <section id="tecnologias">
     <div class="wrap">
       <h2>Tecnologias</h2>
       <p class="sub">Trabalho principalmente com o ecossistema TypeScript, e me adapto à stack que a sua empresa já usa.</p>
