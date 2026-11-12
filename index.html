@@ -350,7 +350,7 @@ a{text-decoration-color:var(--accent)}
 
 .shot{width:min(100%,470px)}
 .shot::before{left:4%;right:4%;top:10%;background:radial-gradient(circle,rgba(255,43,61,.34),transparent 68%);filter:blur(34px)}
-.shot img{filter:contrast(1.08) brightness(.96) drop-shadow(0 0 22px rgba(255,43,61,.32))}
+.shot img{filter:drop-shadow(0 0 22px rgba(255,43,61,.32))}
 .shot::after{content:"";position:absolute;inset:4% 0 14% 0;pointer-events:none;opacity:.8;
 background:linear-gradient(var(--accent) 0 0) 0 0/26px 2px,linear-gradient(var(--accent) 0 0) 0 0/2px 26px,linear-gradient(var(--accent) 0 0) 100% 0/26px 2px,linear-gradient(var(--accent) 0 0) 100% 0/2px 26px,linear-gradient(var(--accent) 0 0) 0 100%/26px 2px,linear-gradient(var(--accent) 0 0) 0 100%/2px 26px,linear-gradient(var(--accent) 0 0) 100% 100%/26px 2px,linear-gradient(var(--accent) 0 0) 100% 100%/2px 26px;background-repeat:no-repeat}
 .scan{position:absolute;left:0;right:0;top:4%;height:2px;z-index:2;background:var(--accent);box-shadow:0 0 14px 2px rgba(255,43,61,.8),0 -40px 60px 10px rgba(255,43,61,.08);animation:scan 4.8s cubic-bezier(.4,0,.6,1) infinite alternate}
@@ -418,21 +418,16 @@ footer{border-top-color:rgba(255,43,61,.18);text-transform:uppercase;letter-spac
 @media (prefers-reduced-motion:reduce){.boot span{opacity:1}.scan{display:none}}
 @media (max-width:980px){.hex{display:none}.shot{width:min(84%,380px)}}
 
-/* retrato quadrado, em moldura de HUD */
-.shot{align-self:center;width:min(100%,440px);margin-bottom:56px}
-.shot::before{left:-6%;right:-6%;top:-6%;background:radial-gradient(circle,rgba(255,43,61,.3),transparent 68%)}
-.shot img{aspect-ratio:1;object-fit:cover;-webkit-mask-image:none;mask-image:none;border:1px solid rgba(255,43,61,.45);filter:contrast(1.04) drop-shadow(0 0 26px rgba(255,43,61,.28))}
-.shot::after{inset:-12px;opacity:.9}
-.scan{top:0}
-.shot figcaption{left:14px;bottom:14px}
-@keyframes scan{to{top:calc(100% - 2px)}}
-@media (max-width:980px){.shot{width:min(84%,380px);margin:8px auto 48px}}
-
 /* vermelho como cor principal; verde fica só no "+" dos diffs, onde tem significado */
 .diff .a{background:rgba(61,220,132,.1);color:#3ddc84}
 .diff .d{background:rgba(255,43,61,.1);color:#ff7d88}
 .term .ps,.term .chk i{color:#ff4d5c}
 @keyframes glitch{0%,91%,100%{text-shadow:none;transform:none}92%{text-shadow:-3px 0 #ff2b3d,3px 0 #00e5ff;transform:translateX(2px) skewX(-2deg)}94%{text-shadow:3px 0 #ff2b3d,-3px 0 #00e5ff;transform:translateX(-2px)}96%{text-shadow:-1px 0 #ff2b3d,1px 0 #00e5ff;transform:none}}
+
+/* busto recortado, sem fundo */
+.shot{width:min(100%,500px)}
+.shot::after{inset:2% 0 10% 0}
+.shot figcaption{bottom:12%}
 </style>
 </head>
 <body>
@@ -597,8 +592,7 @@ footer{border-top-color:rgba(255,43,61,.18);text-transform:uppercase;letter-spac
       <p class="boot" aria-hidden="true"><span>&gt; papel: engenheiro de software</span><span>&gt; foco: backend · ia · appsec</span><span>&gt; status: <b>online</b></span></p>
     </div>
     <figure class="shot">
-      <span class="scan" aria-hidden="true"></span>
-      <img src="/rodrigo-barros-retrato-560.webp" srcset="/rodrigo-barros-retrato-560.webp 560w, /rodrigo-barros-retrato-1120.webp 1120w" sizes="(max-width:980px) 84vw, 440px" width="560" height="560" alt="Rodrigo Barros, de camiseta preta, sorrindo" fetchpriority="high" decoding="async">
+      <img src="/rodrigo-barros-busto-cor-560.webp" srcset="/rodrigo-barros-busto-cor-560.webp 560w, /rodrigo-barros-busto-cor-1120.webp 1120w" sizes="(max-width:980px) 84vw, 500px" width="560" height="528" alt="Rodrigo Barros, de camiseta preta, sorrindo" fetchpriority="high" decoding="async">
       <figcaption><span>Teresina, PI</span><span>remoto</span></figcaption>
     </figure>
   </div>
